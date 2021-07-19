@@ -9,9 +9,9 @@ export let config = {
 
   specs: [
     "home-items.spec.js",
-    //"home-actions.spec.js",
+    "home-actions.spec.js",
     //"home-wait.spec.js",
-    //"external-functions.spec.js",
+    "external-functions.spec.js",
     //"home-component.spec.js",
   ],
 
