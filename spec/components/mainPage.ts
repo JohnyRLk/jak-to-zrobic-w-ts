@@ -76,13 +76,11 @@ export class mainPage {
       "https://bestdrive.webshop.pl/opona/ustawserwis?w=Mazowieckie&k=Navigator&returnUrl="
     );
   }
-  async clickSearch() {
-    await aClick(this.btnSearch);
-  }
   async getValueInput(text: string) {
     return getValueFromInput(`#${text}`);
   }
   async getTiresText() {
+    await aClick(this.btnSearch);
     return getTextTires();
   }
   async present() {

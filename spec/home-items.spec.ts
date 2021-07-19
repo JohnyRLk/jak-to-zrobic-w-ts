@@ -6,15 +6,13 @@ describe("Strona główna bestdrive", function () {
     homePageObject.get();
   });
   it("powinna mieć tytuł: Bestdrive - Opony online - bestdrive.webshop.pl", async function () {
-    expect(await homePageObject.getTtitle()).toMatch(
-      "Bestdrive - Opony online - bestdrive.webshop.pl"
-    );
+    let titleGet = await homePageObject.getTtitle();
+    expect(titleGet).toMatch("Bestdrive - Opony online - bestdrive.webshop.pl");
   });
 
   it("powinna wyświetlać nazwę wybranego serwisu", async function () {
-    expect(await homePageObject.getServiceName("serwis-nazwa")).toEqual(
-      "Navigator"
-    );
+    let getService = await homePageObject.getServiceName("serwis-nazwa");
+    expect(getService).toEqual("Navigator");
   });
 
   it("powinna domyślnie wyświetlać wyszukiwarkę opon wg. rozmiaru", async function () {
@@ -29,11 +27,13 @@ describe("Strona główna bestdrive", function () {
       "KOSZYK (0)",
       "",
     ];
-    expect(await homePageObject.getTextFromMenu()).toEqual(menuItemsArray);
+    let getElementsFrommenu = await homePageObject.getTextFromMenu();
+    expect(getElementsFrommenu).toEqual(menuItemsArray);
   });
 
   it("powinna posiadac menu z pierwszym elementem 'OPONY WG ROZMIARU'", async function () {
-    expect(await homePageObject.getFirst()).toEqual("OPONY WG ROZMIARU");
+    let getFirstElment = await homePageObject.getFirst();
+    expect(getFirstElment).toEqual("OPONY WG ROZMIARU");
   });
 
   it("powinna posiadac stopkę z linkami do ...", async function () {
